@@ -7,7 +7,7 @@ module ITunes
     # Perform an HTTP GET request
     def request(request_type, params)
       url = '/WebObjects/MZStoreServices.woa/wa/ws' + request_type + '&country=GB'
-
+      logger.debug url
       response = connection.get do |req|
         req.url url, params
         req.options = request_options
